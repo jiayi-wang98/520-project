@@ -1,6 +1,6 @@
 # EEP520 Final C++ Programming project-- 
 
-## Overall Goal: Implementation of Deep first Path Search and Prim Maze Generator Algorithm
+## Overall Goal: Implementation of Prim Maze Generator Algorithm and Simulate a Drone Find Path Out with Deep First Path Search.
 
 The main goal of this project is to realize the Prim maze generate algorithm and deep first search algorithm using C++ enviro environment. Simulating a drone insidde this maze trying to find a wayout using DFS.
 
