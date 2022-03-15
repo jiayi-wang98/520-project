@@ -17,7 +17,7 @@ This algorithm is a randomized version of Prim's algorithm.
     - Remove the wall from the list.
 
 ### Deep First Path Search
-A non-recursive implementation of DFS with worst-case space complexity {\displaystyle O(|E|)}O(|E|), with the possibility of duplicate vertices on the stack:[6]
+A non-recursive implementation of DFS with worst-case space complexity O(|E|), with the possibility of duplicate vertices on the stack:
 
 procedure DFS_iterative(G, v) is
 
