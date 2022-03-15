@@ -49,6 +49,7 @@ Then clone the repo into your directory and make:
 
 ```bash
 cd $dir/520_project
+esm start
 make
 enviro
 ```
