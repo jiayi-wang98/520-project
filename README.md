@@ -44,6 +44,7 @@ docker run -p80:80 -p8765:8765 -v $PWD:/source -it klavins/enviro:v1.6 bash
 esm start
 ```
 
+The program is based on `enviro` environment, see here for more information about `enviro`: https://github.com/klavinslab/enviro
 
 Then clone the repo into your directory and make:
 
