@@ -43,30 +43,25 @@ To start Maze Generation and Auto Path Search, excute the following command on y
 docker run -p80:80 -p8765:8765 -v $PWD:/source -it klavins/enviro:v1.6 bash
 esm start
 ```
-The above commands do the following:
 
-- The `-p80:80 option maps _port_ 80 from the Docker container to ports on your host computer. This should allow you to go to
 
-  > http://localhost
-  > with your web browser and see the ENVIRO client. It should say "Error: Failed to fetch. Is the server running?" at this point.
-
-- The `-p8765:8765` option allows the ENVIRO client to communicate with the `enviro` server (not yet running) via a _WebSocket_.
-
-- The command `esm start` uses the <u>e</u>nviro <u>s</u>etup <u>m</u>anager to start a web server from which your browser can access the ENVRIO client.
-
-Then go into the source file directory and make:
+Then clone the repo into your directory and make:
 
 ```bash
-cd $dir/
+cd $dir/520_project
 make
 enviro
 ```
 
 Then navigate to `http://localhost` you should see a rectangular walled area with a blue dot sitting at the up-left corner and an exit at the bottom-right corner.
 
+<img src='https://github.com/jiayi-wang98/520-project/blob/main/maze_gen.jpg' width=70%>
+
 You can click on the `Generate Maze` button at the up-right corner to generate a random maze by Prim Maze Generation Algorithm.
 
 Then you can click on the `Begin Finding the way to the target` button at the up-right corner to start the auto path searching. Since the map is quite big, it should take 5-20 minites to find the exit depending on different maps.
+
+<img src='https://github.com/jiayi-wang98/520-project/blob/main/final.jpg' width=70%>
 
 ## Key Challages
 The key challages are how to realize the Prim maze generate alforithm and deep first path search algorithm in c++ enviro.
