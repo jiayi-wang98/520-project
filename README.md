@@ -76,13 +76,13 @@ Solution:
 4. According to the wall map, place wall agent at the corresponding position.
 
 ### Deep First Search
-1. How to get the wall pass information?
+A. How to get the wall pass information?
 
 Solution: 
 
 Use range sensor. Suppose a map unit=20, place the sensor at the center of the drone. If the range sensor value < 10, then it means its wall in front of the drone. This is implemented in src/wall.h file.
 
-2. How to control the move of the drone according to the DFS results?
+B. How to control the move of the drone according to the DFS results?
 
 Solution: 
 
