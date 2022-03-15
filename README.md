@@ -16,7 +16,7 @@ This algorithm is a randomized version of Prim's algorithm.
         - Add the neighboring walls of the cell to the wall list.
     - Remove the wall from the list.
 
-### Deep first Path Search
+### Deep First Path Search
 A non-recursive implementation of DFS with worst-case space complexity {\displaystyle O(|E|)}O(|E|), with the possibility of duplicate vertices on the stack:[6]
 
 procedure DFS_iterative(G, v) is
