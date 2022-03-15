@@ -61,7 +61,7 @@ You can click on the `Generate Maze` button at the up-right corner to generate a
 
 Then you can click on the `Begin Finding the way to the target` button at the up-right corner to start the auto path searching. Since the map is quite big, it should take 5-20 minites to find the exit depending on different maps.
 
-<img src='https://github.com/jiayi-wang98/520-project/blob/main/final.jpg' width=70%>
+<img src='https://github.com/jiayi-wang98/520-project/blob/main/found.jpg' width=70%>
 
 ## Key Challages
 The key challages are how to realize the Prim maze generate alforithm and deep first path search algorithm in c++ enviro.
