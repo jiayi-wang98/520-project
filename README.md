@@ -126,38 +126,24 @@ Solution: Maintain a path stack `std::vector<std::pair<int,int>> path_stack` to 
 
 ## File Breakdown
 
+```
 520-project
-
    |--src    //source file containing drone.h and wall.h
-   
    |   |--drone.h //drone behaviour with DFS
-   
    |   |--drone.cc //nothing
-   
    |   |--wall.h  //wall generate with Prim's algorithm
-   
    |   |--wall.cc //nothing
-   
    |   |--README.md
-   
    |--defs    //physical design
-   
    |   |--drone.json //drone physical define
-   
    |   |--wall.json  //wall physical define
-   
    |   |--README.md
-   
    |--lib     //lib
-   
    |   |--...
-   
    |--config.json   //contains the initial agent definition and map definition
-   
    |--Makefile
-   
    |--README.md
-   
+```   
    
 
 
