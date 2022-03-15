@@ -78,11 +78,15 @@ Solution:
 ### Deep First Search
 1. How to get the wall pass information?
 
-Solution: Use range sensor. Suppose a map unit=20, place the sensor at the center of the drone. If the range sensor value < 10, then it means its wall in front of the drone. This is implemented in src/wall.h file.
+Solution: 
+
+Use range sensor. Suppose a map unit=20, place the sensor at the center of the drone. If the range sensor value < 10, then it means its wall in front of the drone. This is implemented in src/wall.h file.
 
 2. How to control the move of the drone according to the DFS results?
 
-Solution: I tried to let the drone move one unit once. It will go into a state machine to control the overall behaviour.
+Solution: 
+
+I tried to let the drone move one unit once. It will go into a state machine to control the overall behaviour.
 
 ```c++
 class droneSM : public StateMachine, public AgentInterface {
@@ -123,21 +127,37 @@ Solution: Maintain a path stack `std::vector<std::pair<int,int>> path_stack` to 
 ## File Breakdown
 
 520-project
+
    |--src    //source file containing drone.h and wall.h
+   
    |   |--drone.h //drone behaviour with DFS
+   
    |   |--drone.cc //nothing
+   
    |   |--wall.h  //wall generate with Prim's algorithm
+   
    |   |--wall.cc //nothing
+   
    |   |--README.md
+   
    |--defs    //physical design
+   
    |   |--drone.json //drone physical define
+   
    |   |--wall.json  //wall physical define
+   
    |   |--README.md
+   
    |--lib     //lib
+   
    |   |--...
+   
    |--config.json   //contains the initial agent definition and map definition
+   
    |--Makefile
+   
    |--README.md
+   
    
 
 
