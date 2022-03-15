@@ -1,6 +1,9 @@
 # EEP520 Final C++ Programming project-- 
 
 ## Overall Goal: Implementation of Deep first Path Search and Prim Maze Generator Algorithm
+
+The main goal of this project is to realize the Prim maze generate algorithm and deep first search algorithm using C++ enviro environment.
+
 ### Maze Generator
 Randomized Prim's algorithm
 This algorithm is a randomized version of Prim's algorithm.
