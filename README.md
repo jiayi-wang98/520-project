@@ -63,6 +63,10 @@ Then you can click on the `Begin Finding the way to the target` button at the up
 
 <img src='https://github.com/jiayi-wang98/520-project/blob/main/found.jpg' width=70%>
 
+Tips and Problems:
+
+The initial thinking of `Clear Maze` button is trying to clear the maze and re-generate one after the completion of the search. But it always has `std::bad_function_call` error whatever I try to fix it. So in order to try another maze, just `Ctrl+C` to terminate the current process and use `enviro` to create a new one.
+
 ## Key Challages
 The key challages are how to realize the Prim maze generate alforithm and deep first path search algorithm in c++ enviro.
 
