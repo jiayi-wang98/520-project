@@ -2,7 +2,7 @@
 
 ## Overall Goal: Implementation of Deep first Path Search and Prim Maze Generator Algorithm
 
-The main goal of this project is to realize the Prim maze generate algorithm and deep first search algorithm using C++ enviro environment.
+The main goal of this project is to realize the Prim maze generate algorithm and deep first search algorithm using C++ enviro environment. Simulating a drone insidde this maze trying to find a wayout using DFS.
 
 ### Maze Generator
 Randomized Prim's algorithm
@@ -53,7 +53,7 @@ make
 enviro
 ```
 
-Then navigate to `http://localhost` you should see a rectangular walled area with a blue dot sitting at the up-left corner and an exit at the bottom-right corner.
+Then navigate to `http://localhost` you should see a rectangular walled area with a blue drone sitting at the up-left corner and an exit at the bottom-right corner.
 
 <img src='https://github.com/jiayi-wang98/520-project/blob/main/maze_gen.jpg' width=70%>
 
@@ -65,6 +65,82 @@ Then you can click on the `Begin Finding the way to the target` button at the up
 
 ## Key Challages
 The key challages are how to realize the Prim maze generate alforithm and deep first path search algorithm in c++ enviro.
+
+### Maze generator
+How to represent the wall and generate it randomly?
+
+Solution: 
+1. Create a static agent called *wall*, respond to `button_click`.
+2. Use 29*29 matrix `wall_location` to represent the map location, 1 means wall, 0 means road.
+3. Implement Prim's algorithm on the matrix to generate the wall map.
+4. According to the wall map, place wall agent at the corresponding position.
+
+### Deep First Search
+1. How to get the wall pass information?
+
+Solution: Use range sensor. Suppose a map unit=20, place the sensor at the center of the drone. If the range sensor value < 10, then it means its wall in front of the drone. This is implemented in src/wall.h file.
+
+2. How to control the move of the drone according to the DFS results?
+
+Solution: I tried to let the drone move one unit once. It will go into a state machine to control the overall behaviour.
+
+```c++
+class droneSM : public StateMachine, public AgentInterface {
+
+    public:
+    //droneController() : Process(), AgentInterface() {}
+    droneSM() : StateMachine() {
+    set_initial(initial);
+    add_transition("start", initial, standby);
+    add_transition("exit", standby,initial);
+    add_transition("begin", standby, moving_forward);
+    add_transition("move forward", standby, moving_forward);
+    add_transition("blockage", moving_forward, standby);
+    add_transition("target reached", moving_forward, standby);
+    add_transition("turn right", standby, rotating_right);
+    //add_transition("turn right", moving_forward, rotating_right);
+    add_transition("turn around", standby, turn_around);
+    add_transition("turn left", standby, rotating_left);
+    add_transition("move forward", rotating_right, moving_forward);
+    add_transition("move forward", rotating_left, moving_forward);
+    add_transition("move forward", turn_around, moving_forward);
+    }
+
+    MovingForward moving_forward;
+    RotatingRight rotating_right;
+    RotatingLeft rotating_left;
+    Standby standby;
+    TurnAround turn_around;
+    Initial initial;
+};
+```
+
+3. How to trace back if the drone comes to an end of a path?
+
+Solution: Maintain a path stack `std::vector<std::pair<int,int>> path_stack` to record the path the drone has passed, and trace back one by one step to the last cross-section that has not been fully explored. This is implemented in src/drone.h file.
+
+
+## File Breakdown
+
+520-project
+   |--src    //source file containing drone.h and wall.h
+   |   |--drone.h //drone behaviour with DFS
+   |   |--drone.cc //nothing
+   |   |--wall.h  //wall generate with Prim's algorithm
+   |   |--wall.cc //nothing
+   |   |--README.md
+   |--defs    //physical design
+   |   |--drone.json //drone physical define
+   |   |--wall.json  //wall physical define
+   |   |--README.md
+   |--lib     //lib
+   |   |--...
+   |--config.json   //contains the initial agent definition and map definition
+   |--Makefile
+   |--README.md
+   
+
+
 
 
 
