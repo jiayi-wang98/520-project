@@ -17,17 +17,20 @@ This algorithm is a randomized version of Prim's algorithm.
 A non-recursive implementation of DFS with worst-case space complexity {\displaystyle O(|E|)}O(|E|), with the possibility of duplicate vertices on the stack:[6]
 
 procedure DFS_iterative(G, v) is
-    -let S be a stack
-    -S.push(v)
-    -while S is not empty do
-        -v = S.pop()
-        -if v is not labeled as discovered then
-            -label v as discovered
-            -for all edges from v to w in G.adjacentEdges(v) do 
-                -S.push(w)
+
+    let S be a stack
+    S.push(v)
+    while S is not empty do
+        v = S.pop()
+        if v is not labeled as discovered then
+            label v as discovered
+            for all edges from v to w in G.adjacentEdges(v) do 
+                S.push(w)
 
 more information about algorithms see wikipedia here. 
+
 Maze generator: https://en.wikipedia.org/wiki/Maze_generation_algorithm 
+
 Deep First Search: https://en.wikipedia.org/wiki/Depth-first_search
 
 ## Getting Started
