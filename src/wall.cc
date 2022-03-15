@@ -1,5 +1,5 @@
 #include <iostream>
-#include "block.h"
+#include "wall.h"
 
 using namespace enviro;
 

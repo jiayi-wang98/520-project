@@ -1,0 +1,39 @@
+{
+    "name": "drone",
+    "type": "dynamic",
+    "description": "Replace this string with a description",
+    "shape": [
+        { "x": -2.5, "y": 5 },
+        { "x": -5, "y": 2.5 },
+        { "x": -5, "y": -2.5 },
+        { "x": -2.5, "y": -5 },
+        { "x": 2.5, "y": -5 },
+        { "x": 5, "y": -2.5 },
+        { "x": 5, "y": 2.5 },
+        { "x": 2.5, "y":5 }
+    ],
+    "friction": {
+      "collision": 0,
+      "linear": 10,
+      "rotational": 600
+    },
+    "sensors": [
+      { 
+          "type": "range",
+          "location": { "x": 0, "y": 0 },
+          "direction": 0
+      },
+      { 
+          "type": "range",
+          "location": { "x": 0, "y": 0},
+          "direction": 1.57
+      } ,
+      { 
+          "type": "range",
+          "location": { "x": 0, "y": 0},
+          "direction": -1.57
+      }                        
+  ],
+    "mass": 1,    
+    "controller": "lib/drone.so"
+}
